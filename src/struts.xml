@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="login" namespace="/loginns" extends="struts-default">
+		<action name="ShowLoginPage"
+			class="com.myeclipseide.example.myblog.login.ShowLoginPage">
+			<result name="success" type="dispatcher">/loginPage.jsp</result>
+		</action>
+	</package>
+	<package name="secure" namespace="/securens" extends="struts-default">
+		<action name="AuthenticateUser"
+			class="com.myeclipseide.example.myblog.secure.AuthenticateUser">
+			<result name="error" type="dispatcher">/loginPage.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="namespace">/bloggingns</param>
+				<param name="actionName">ShowBlogAdminPage</param>
+			</result>
+		</action>
+	</package>
+	<package name="blogging" namespace="/bloggingns" extends="struts-default"> 
+		<action name="ShowBlogAdminPage"
+			class="com.myeclipseide.example.myblog.blogging.ShowBlogAdminPage">
+			<result name="success" type="dispatcher">
+				/blogAdminPage.jsp
+			</result>
+		</action>
+		<action name="CreateBlogPost"
+			class="com.myeclipseide.example.myblog.blogging.CreateBlogPost">
+			<result name="success" type="dispatcher">
+				/createBlogPage.jsp
+			</result>
+		</action>
+		<action name="ReviewAllPosts"
+			class="com.myeclipseide.example.myblog.blogging.ReviewAllPosts">
+			<result name="success" type="dispatcher">
+				/reviewPostsPage.jsp
+			</result>
+		</action>
+		<action name="DeleteBlogPost"
+			class="com.myeclipseide.example.myblog.blogging.DeleteBlog">
+			<result name="success" type="dispatcher">
+				/deleteBlogPage.jsp
+			</result>
+		</action>
+		<action name="PublishBlogPost"
+			class="com.myeclipseide.example.myblog.blogging.PublishBlogPost">
+			<result name="success" type="dispatcher">
+				/publishBlogPage.jsp
+			</result>
+		</action>
+		<action name="ShowDeleteBlogPage" class="com.myeclipseide.example.myblog.blogging.ShowDeleteBlogPage">
+			<result>/deleteBlogPage.jsp</result>
+		</action></package>
+</struts>    

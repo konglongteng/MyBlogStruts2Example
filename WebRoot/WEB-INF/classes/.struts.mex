@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="login" location="30,165" size="265,140">
+    <action name="ShowLoginPage" location="78,70" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="loginPage.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="secure" location="345,150" size="280,140">
+    <action name="AuthenticateUser" location="78,60" size="150,62">
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="loginPage.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="ShowBlogAdminPage" namespace="/bloggingns" />
+      </result>
+    </action>
+  </package>
+  <package name="blogging" location="30,360" size="552,346">
+    <action name="ShowBlogAdminPage" location="64,83" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="blogAdminPage.jsp" />
+      </result>
+    </action>
+    <action name="CreateBlogPost" location="345,151" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="createBlogPage.jsp" />
+      </result>
+    </action>
+    <action name="ReviewAllPosts" location="344,237" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="reviewPostsPage.jsp" />
+      </result>
+    </action>
+    <action name="DeleteBlogPost" location="61,154" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="deleteBlogPage.jsp" />
+      </result>
+    </action>
+    <action name="PublishBlogPost" location="348,83" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="publishBlogPage.jsp" />
+      </result>
+    </action>
+    <action name="ShowDeleteBlogPage" location="60,239" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="deleteBlogPage.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="loginPage.jsp" path="/loginPage.jsp" location="636,285" size="150,55" />
+  <webResource name="blogAdminPage.jsp" path="/blogAdminPage.jsp" location="636,360" size="150,55" />
+  <webResource name="createBlogPage.jsp" path="/createBlogPage.jsp" location="636,510" size="150,55" />
+  <webResource name="deleteBlogPage.jsp" path="/deleteBlogPage.jsp" location="636,660" size="150,55" />
+  <webResource name="publishBlogPage.jsp" path="/publishBlogPage.jsp" location="636,435" size="150,55" />
+  <webResource name="reviewPostsPage.jsp" path="/reviewPostsPage.jsp" location="636,585" size="150,55" />
+</Struts2Diagram>
+
